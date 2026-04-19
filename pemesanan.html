@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pemesanan – App Pinky Store</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <span class="brand-icon">🌸</span>
+      App Pinky Store
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html"><i class="bi bi-house me-1"></i>Beranda</a></li>
+      <li><a href="aplikasi.html"><i class="bi bi-grid me-1"></i>Aplikasi</a></li>
+      <li><a href="harga.html"><i class="bi bi-tag me-1"></i>Harga</a></li>
+      <li><a href="pemesanan.html" class="active"><i class="bi bi-cart me-1"></i>Pesan</a></li>
+      <li><a href="faq.html"><i class="bi bi-question-circle me-1"></i>FAQ</a></li>
+      <li><a href="kontak.html"><i class="bi bi-envelope me-1"></i>Kontak</a></li>
+      <li class="nav-cta"><a href="pemesanan.html" class="active"><i class="bi bi-lightning-fill me-1"></i>Beli Sekarang</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <nav aria-label="breadcrumb"><ol class="breadcrumb" style="font-size:.82rem"><li class="breadcrumb-item"><a href="index.html" style="color:rgba(255,255,255,.6)">Beranda</a></li><li class="breadcrumb-item active" style="color:white">Pemesanan</li></ol></nav>
+    <h1><i class="bi bi-cart me-2"></i>Form Pemesanan</h1>
+    <p class="lead">Isi form di bawah — Admin akan menghubungi Anda via WhatsApp</p>
+  </div>
+</div>
+
+<section class="py-section bg-light-grey">
+  <div class="container">
+
+    <!-- STEPS -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8">
+        <div class="d-flex justify-content-between position-relative" style="padding:0 1rem">
+          
+          <div class="text-center" style="position:relative;z-index:1">
+            <div style="width:36px;height:36px;border-radius:50%;background:var(--primary);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;margin:0 auto .5rem">1</div>
+            <small style="font-size:.75rem;font-weight:600;color:var(--primary)">Isi Form</small>
+          </div>
+          <div class="text-center" style="position:relative;z-index:1">
+            <div style="width:36px;height:36px;border-radius:50%;background:var(--border);color:var(--muted);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;margin:0 auto .5rem">2</div>
+            <small style="font-size:.75rem;font-weight:600;color:var(--muted)">Konfirmasi Admin</small>
+          </div>
+          <div class="text-center" style="position:relative;z-index:1">
+            <div style="width:36px;height:36px;border-radius:50%;background:var(--border);color:var(--muted);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;margin:0 auto .5rem">3</div>
+            <small style="font-size:.75rem;font-weight:600;color:var(--muted)">Pembayaran</small>
+          </div>
+          <div class="text-center" style="position:relative;z-index:1">
+            <div style="width:36px;height:36px;border-radius:50%;background:var(--border);color:var(--muted);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;margin:0 auto .5rem">4</div>
+            <small style="font-size:.75rem;font-weight:600;color:var(--muted)">Aktivasi</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-5 align-items-start">
+
+      <!-- ═══ FORM ═══ -->
+      <div class="col-lg-5">
+        <div class="form-card">
+          <h4><i class="bi bi-pencil-square me-2" style="color:var(--primary)"></i>Data Pemesanan</h4>
+
+          <!-- Info box -->
+          <div style="background:var(--primary-lt);border:1px solid #BFDBFE;border-radius:8px;padding:.85rem 1rem;margin-bottom:1.5rem;font-size:.83rem;color:#1D4ED8">
+            <i class="bi bi-info-circle me-2"></i>Setelah submit, <strong>admin akan menghubungi via WhatsApp</strong> dalam 30 menit untuk konfirmasi pembayaran & aktivasi.
+          </div>
+
+          <form id="orderForm" novalidate>
+            <div class="row g-3 mb-3">
+              <div class="col-6">
+                <label class="form-label">Nama Lengkap <span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="custName" placeholder="Nama Anda" required>
+              </div>
+              <div class="col-6">
+                <label class="form-label">No. WhatsApp <span style="color:red">*</span></label>
+                <input type="tel" class="form-control" id="custWA" placeholder="08xx-xxxx-xxxx" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Alamat Email</label>
+              <input type="email" class="form-control" id="custEmail" placeholder="email@contoh.com">
+              <div class="form-text" style="font-size:.78rem">Untuk pengiriman lisensi digital</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Aplikasi yang Dipesan <span style="color:red">*</span></label>
+              <select class="form-select" id="appName" required>
+                <option value="">-- Pilih Aplikasi --</option>
+                <optgroup label="📊 Produktivitas">
+                  <option>Microsoft 365 Personal</option>
+                  <option>Microsoft 365 Family</option>
+                  <option>Notion Premium</option>
+                  <option>Zoom Pro</option>
+                </optgroup>
+                <optgroup label="🎨 Desain & Kreatif">
+                  <option>Adobe Creative Cloud</option>
+                  <option>Adobe Photoshop</option>
+                  <option>Canva Pro</option>
+                </optgroup>
+                <optgroup label="🤖 AI Tools">
+                  <option>ChatGPT Plus (OpenAI)</option>
+                  <option>Grammarly Premium</option>
+                </optgroup>
+                <optgroup label="🎬 Streaming">
+                  <option>Spotify Premium</option>
+                  <option>Netflix Standard</option>
+                  <option>YouTube Premium</option>
+                </optgroup>
+                <optgroup label="🔒 Keamanan">
+                  <option>NordVPN (1 Tahun)</option>
+                </optgroup>
+                <optgroup label="💻 Dev Tools">
+                  <option>GitHub Copilot</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-6">
+                <label class="form-label">Durasi Berlangganan</label>
+                <select class="form-select" id="duration">
+                  <option>1 Bulan</option>
+                  <option>3 Bulan</option>
+                  <option>6 Bulan</option>
+                  <option>12 Bulan</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label class="form-label">Total Harga (otomatis)</label>
+                <input type="text" class="form-control" id="totalHarga" placeholder="Pilih aplikasi dulu" readonly style="background:#EFF6FF;color:#1D4ED8;font-weight:700">
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Metode Pembayaran</label>
+              <select class="form-select" id="payMethod">
+                <option>Transfer BCA</option>
+                <option>Transfer BRI</option>
+                <option>Transfer BNI</option>
+                <option>GoPay</option>
+                <option>OVO</option>
+                <option>DANA</option>
+                <option>QRIS</option>
+              </select>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label">Catatan Tambahan</label>
+              <textarea class="form-control" id="notes" rows="3" placeholder="Contoh: akun baru / akun sendiri / keperluan..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              <i class="bi bi-send me-2"></i>Kirim Pesanan — Hubungi Admin
+            </button>
+          </form>
+
+          
+
+          <div class="mt-4 pt-3" style="border-top:1.5px solid var(--border)">
+            <p style="font-size:.8rem;color:var(--muted);text-align:center;margin:0">
+              <i class="bi bi-whatsapp me-1" style="color:#25D366"></i>
+              Atau langsung WA: <a href="https://wa.me/6281234567890" style="color:var(--primary);font-weight:700">+62 812-3456-7890</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ DATA TABLE ═══ -->
+      <div class="col-lg-7">
+        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+          <h5 style="font-family:'Syne',sans-serif;font-weight:800;margin:0;color:var(--dark)">
+            <i class="bi bi-table me-2" style="color:var(--primary)"></i>Data Pesanan Masuk
+          </h5>
+          <span style="background:var(--primary);color:white;padding:.25rem .9rem;border-radius:50px;font-weight:700;font-size:.82rem">
+            <span id="orderCount">0</span> Pesanan
+          </span>
+        </div>
+
+        <div class="mb-3 d-flex gap-2 flex-wrap">
+          <input type="text" class="form-control form-control-sm" style="max-width:220px" id="cariInput" placeholder="🔍 Cari nama / aplikasi..." onkeyup="searchOrders(this.value)">
+          
+          <button class="btn btn-sm btn-outline-danger" onclick="clearAll()">
+            <i class="bi bi-trash me-1"></i>Hapus Semua
+          </button>
+        </div>
+
+        <div class="table-wrap">
+          <div class="table-responsive">
+            <table class="table table-custom mb-0">
+              <thead>
+                <tr>
+                  <th>ID Pesanan</th>
+                  <th>Pelanggan</th>
+                  <th>Aplikasi</th>
+                  <th>Durasi</th>
+                  <th>Total</th>
+                  <th>Pembayaran</th>
+                  <th>Email</th>
+                  <th>Tanggal</th>
+                  <th>Status</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="orderBody">
+                <tr class="no-data">
+                  <td colspan="10" style="text-align:center;padding:3rem;color:var(--muted)">
+                    <i class="bi bi-inbox" style="font-size:2.5rem;display:block;margin-bottom:.5rem;opacity:.4"></i>
+                    <strong>Belum ada pesanan</strong><br>
+                    <small>Isi form di sebelah kiri untuk menambah pesanan</small>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Order summary -->
+        <div class="row g-3 mt-3">
+          <div class="col-4">
+            <div style="background:white;border:1.5px solid var(--border);border-radius:10px;padding:1rem;text-align:center">
+              <div style="font-size:1.4rem;font-weight:800;color:var(--primary)" id="countPending">0</div>
+              <small style="color:var(--muted);font-size:.78rem;font-weight:600">Pending</small>
+            </div>
+          </div>
+          <div class="col-4">
+            <div style="background:white;border:1.5px solid var(--border);border-radius:10px;padding:1rem;text-align:center">
+              <div style="font-size:1.4rem;font-weight:800;color:var(--green)" id="countSelesai">0</div>
+              <small style="color:var(--muted);font-size:.78rem;font-weight:600">Selesai</small>
+            </div>
+          </div>
+          <div class="col-4">
+            <div style="background:white;border:1.5px solid var(--border);border-radius:10px;padding:1rem;text-align:center">
+              <div style="font-size:1.4rem;font-weight:800;color:var(--dark)" id="countTotal">0</div>
+              <small style="color:var(--muted);font-size:.78rem;font-weight:600">Total</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div class="mt-4" style="background:white;border:1.5px solid var(--border);border-radius:10px;padding:1.25rem">
+          <h6 style="font-weight:700;color:var(--dark);margin-bottom:.75rem;font-size:.9rem"><i class="bi bi-info-circle me-2" style="color:var(--primary)"></i>Alur Setelah Pesanan</h6>
+          <ol style="font-size:.83rem;color:var(--mid);padding-left:1.2rem;line-height:2;margin:0">
+            <li>Admin menerima notifikasi pesanan baru</li>
+            <li>Admin menghubungi via WhatsApp dalam <strong>30 menit</strong></li>
+            <li>Konfirmasi pembayaran sesuai metode yang dipilih</li>
+            <li>Aktivasi lisensi <strong>1–3 jam</strong> setelah pembayaran</li>
+            <li>Garansi penuh selama masa berlangganan</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4"><div class="d-flex align-items-center gap-2 mb-3"><span class="brand-icon" style="background:var(--primary);color:white;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem">AP</span><span style="font-family:'Syne',sans-serif;font-weight:800;color:white;font-size:1.1rem">App Pinky Store</span></div><p style="font-size:.85rem;line-height:1.7">Toko aplikasi premium terpercaya di Indonesia sejak 2026.</p></div>
+      <div class="col-md-2"><h5>Halaman</h5><a class="footer-link" href="index.html">Beranda</a><a class="footer-link" href="aplikasi.html">Aplikasi</a><a class="footer-link" href="harga.html">Harga</a><a class="footer-link" href="pemesanan.html">Pesan</a><a class="footer-link" href="faq.html">FAQ</a><a class="footer-link" href="kontak.html">Kontak</a></div>
+      
+      <div class="col-md-3"><h5>Kontak</h5><p style="font-size:.85rem"><i class="bi bi-whatsapp me-2"></i>+62 812-3456-7890</p><p style="font-size:.85rem"><i class="bi bi-envelope me-2"></i><span style="word-break:break-all">adinstore@gmail.com</span></p></div>
+    </div>
+    <hr class="footer-divider"><p class="text-center" style="font-size:.82rem;opacity:.5;margin:0">© 2026 App Pinky Store</p>
+  </div>
+</footer>
+
+<button id="goTop"><i class="bi bi-chevron-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
